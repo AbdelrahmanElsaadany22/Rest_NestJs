@@ -14,6 +14,13 @@ export class ReviewService {
         ,@InjectModel(menu.name) private readonly menuModel:Model<menu>,
         @InjectModel(order.name) private readonly orderModel:Model<order>,
     ) {}
+    //get review
+    async getReview(reviewId:string):Promise<review>{
+        const review=await this.reviewModel.findById(reviewId)
+        if(!review)
+            throw new NotFoundException('Review Not Founded')
+        return review
+    }
     //add Review(user)
     async createReview(createReviewDto:createReviewDto):Promise<review>{
         const {reviewer,menuItem}=createReviewDto //as id 

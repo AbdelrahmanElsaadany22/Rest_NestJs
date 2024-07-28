@@ -12,7 +12,13 @@ export class OrderService {
     @InjectModel(order.name) private orderModel: Model<order>,
     @InjectModel(menu.name) private menuModel: Model<menu>,
   ) {}
-
+  async getOrder(orderId:string):Promise<order>
+  {
+    const order=await this.orderModel.findById(orderId)
+    if(!order)
+        throw new NotFoundException('Order Not Founded')
+    return order
+  }
   //create order(user only)
   async createOrder(createOrderDto: CreateOrderDto, userId: string): Promise<order> {
     const { items } = createOrderDto;

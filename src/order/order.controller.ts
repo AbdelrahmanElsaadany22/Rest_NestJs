@@ -9,21 +9,32 @@ import { CreateOrderDto } from './dto/order.dto';
 @Controller('order')
 export class OrderController {
     constructor(private readonly orderService:OrderService){}
-    
-    @Post('add/:id')
+    @Get('order/:id')
     @UseGuards(AuthGuard('jwt'),RolesGuard)
     @Roles(userRoles.ADMIN,userRoles.USER)
+    async getOrder(@Param('id') id:string){
+        return this.orderService.getOrder(id)
+    }
+
+
+    @Post('add/:id')
+    @UseGuards(AuthGuard('jwt'),RolesGuard)
+    @Roles(userRoles.USER)
     async createOrder(@Body()CreateOrderDto:CreateOrderDto,@Param('id') id:string){
         return this.orderService.createOrder(CreateOrderDto,id)
     }
 
     @Put('edit/:id')
+    @UseGuards(AuthGuard('jwt'),RolesGuard)
+    @Roles(userRoles.USER)
     async editOrder(@Body()CreateOrderDto:CreateOrderDto,@Param('id') id:string ,@Req() req){
         
         return this.orderService.editOrder(id,CreateOrderDto,req.user.id)
     }
 
     @Delete('cancel/:id')
+    @UseGuards(AuthGuard('jwt'),RolesGuard)
+    @Roles(userRoles.USER)
     async cancelOrder(@Param('id') id:string){
         return this.orderService.cancelOrder(id)
     }

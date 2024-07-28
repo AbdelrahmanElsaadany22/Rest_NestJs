@@ -43,7 +43,7 @@ export class MenuController {
     }
 
 
-    //edit item (only admin)
+    //delete item (only admin)
     @Delete('delete/:id')
     @UseGuards(AuthGuard('jwt'),RolesGuard)
     @Roles(userRoles.ADMIN)

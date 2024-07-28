@@ -60,7 +60,7 @@ export class MenuService {
             return editedItem;
         }
     
-    //delet item(only admin)
+    //delete item(only admin)
     async deleteItem(id:string):Promise<menu>{
         if (!Types.ObjectId.isValid(id)) { 
             throw new BadRequestException('Invalid item ID');
