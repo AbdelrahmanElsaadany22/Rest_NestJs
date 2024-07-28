@@ -56,6 +56,89 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+##Project Structure
+c:/Users/hp/Desktop/restaurant/
+  ├─]dist/ (ignored)
+  ├─]node_modules/ (ignored)
+  ├─ src/
+  │  ├─ auth/
+  │  │  ├─ decorators/
+  │  │  │  ├─ current-user.decerator.ts
+  │  │  │  └─ roles.decorator.ts
+  │  │  ├─ dto/
+  │  │  │  ├─ login.dto.ts
+  │  │  │  └─ signup.dto.ts
+  │  │  ├─ gurads/
+  │  │  │  └─ roles.gurad.ts
+  │  │  ├─ schemas/
+  │  │  │  └─ user.schema.ts
+  │  │  ├─ attach-user.ts
+  │  │  ├─ auth.controller.ts
+  │  │  ├─ auth.module.ts
+  │  │  ├─ auth.service.ts
+  │  │  └─ jwt.strategy.ts
+  │  ├─ cloudinary/
+  │  │  ├─ cloudinary-response.ts
+  │  │  ├─ cloudinary.module.ts
+  │  │  ├─ cloudinary.service.ts
+  │  │  └─ cloudinary.ts
+  │  ├─ image/
+  │  │  ├─ schemas/
+  │  │  │  └─ image.schema.ts
+  │  │  ├─ image.module.ts
+  │  │  └─ image.service.ts
+  │  ├─ menu/
+  │  │  ├─ dto/
+  │  │  │  ├─ add-menu.ts
+  │  │  │  └─ edit-menu.ts
+  │  │  ├─ schema/
+  │  │  │  └─ menu.schema.ts
+  │  │  ├─ menu.controller.ts
+  │  │  ├─ menu.module.ts
+  │  │  └─ menu.service.ts
+  │  ├─ order/
+  │  │  ├─ dto/
+  │  │  │  └─ order.dto.ts
+  │  │  ├─ schemas/
+  │  │  │  └─ order.schema.ts
+  │  │  ├─ order.controller.ts
+  │  │  ├─ order.module.ts
+  │  │  └─ order.service.ts
+  │  ├─ restaurant/
+  │  │  ├─ dto/
+  │  │  │  ├─ add-restaurant.dto.ts
+  │  │  │  └─ update-restaurant.dto.ts
+  │  │  ├─ schemas/
+  │  │  │  └─ restaurant.schema.ts
+  │  │  ├─ restaurant.controller.ts
+  │  │  ├─ restaurant.service.ts
+  │  │  └─ restaurants.module.ts
+  │  ├─ review/
+  │  │  ├─ dto/
+  │  │  │  └─ create-review.dto.ts
+  │  │  ├─ schemas/
+  │  │  │  └─ review.schema.ts
+  │  │  ├─ review.controller.ts
+  │  │  ├─ review.module.ts
+  │  │  └─ review.service.ts
+  │  ├─ utils/
+  │  │  └─ apiFeatures.ts
+  │  ├─ app.controller.spec.ts
+  │  ├─ app.controller.ts
+  │  ├─ app.module.ts
+  │  ├─ app.service.ts
+  │  └─ main.ts
+  ├─].env (ignored)
+  ├─ .env.example
+  ├─ .eslintrc.js
+  ├─ .gitignore
+  ├─ .prettierrc
+  ├─ nest-cli.json
+  ├─ package-lock.json
+  ├─ package.json
+  ├─ README.md
+  ├─ tsconfig.build.json
+  └─ tsconfig.json
 
 ## Support
 
