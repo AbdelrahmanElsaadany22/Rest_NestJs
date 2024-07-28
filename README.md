@@ -56,7 +56,7 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-##Project Structure
+## Project Structure
 c:/Users/hp/Desktop/restaurant/
   ├─]dist/ (ignored)
   ├─]node_modules/ (ignored)
